@@ -1,0 +1,65 @@
+@import 'components/variables';
+@import 'extras/normalize';
+@import 'components/fonts';
+@import 'components/icomoon';
+@import 'components/mixins';
+@import 'components/grilla';
+@import 'components/atomos';
+
+body {
+    font-family: "Open Sans",sans-serif;
+    font-size: 14px;
+    color: #444;
+    background-color: #f1f1f1;
+}
+
+a {
+    outline: none;
+    text-decoration: none;
+    color: inherit;
+}
+
+input[type="text"] {
+    border: none;
+    border-bottom: 1px solid $link-color;
+}
+
+.row {
+    display: block;
+}
+
+.dspflex {
+    display: flex;
+}
+
+.mrg-auto {
+    margin: auto;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    .debug {
+        min-height: 25px;
+        background-color: grey;
+    }
+    &.no-wrap {
+        flex-wrap: nowrap;
+    }
+}
+
+.a-center {
+    text-align: center;
+}
+
+.a-left {
+    text-align: left;
+}
+
+.a-right {
+    text-align: right;
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}

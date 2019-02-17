@@ -1,0 +1,55 @@
+$breakpoints: (
+    xs: 0px,
+    sm: 640px,
+    sd: 960px,
+    md: 1200px,
+    lg: 1500px,
+    xl: 1800px,
+);
+
+*[class^="col-"] {
+    @include galp;
+    width: 100%;
+    &.g-15 {
+        @include galp-large;
+    }
+    &.g-em {
+        @include galp-em;
+    }
+}
+
+.col-auto {
+    width: auto;
+}
+
+.col-float-right {
+    margin-left: auto;
+    order: 2;
+}
+.col-float-left {
+    margin-right: auto;
+    order: 2;
+}
+
+@for $i from 1 through 20 {
+    .col-#{$i * 5} {
+        width: $i * 5%;
+    }
+}
+
+@each $name, $value in $breakpoints {
+
+    @media screen and (min-width: $value){
+        @for $i from 1 through 20 {
+            .col-#{$name}-#{$i * 5} {
+                width: $i * 5%;
+            }
+        }
+    }
+
+    @media screen and (max-width: $value){
+        .not-in-#{$name} {
+            display: none !important;
+        }
+    }
+}

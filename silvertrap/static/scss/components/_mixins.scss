@@ -1,0 +1,54 @@
+@mixin flat {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+@mixin link-color {
+    color: $link-color;
+    &:hover {
+        color: $link-color-hover
+    }
+}
+
+@mixin h-cleaner {
+    margin: 0;
+    padding: 0;
+}
+
+@mixin link {
+    @include link-color;
+    text-decoration: none;
+}
+
+@mixin galp {
+    padding-left: 10px;
+    padding-right: 10px;
+    box-sizing: border-box;
+    &.no-galp{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
+
+@mixin galp-large {
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+    &.no-galp{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+}
+
+@mixin galp-em {
+    padding-left: 1em;
+    padding-right: 1em;
+    box-sizing: border-box;
+    &.no-galp{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    
+}
